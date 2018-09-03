@@ -1,5 +1,6 @@
 <template>
   <div class="drumpad">
+    <div class="key">{{ sound.key }}</div>
     <button>{{ sound.name }}</button>
     <audio :src="audioSrc"></audio>
   </div>
@@ -37,5 +38,13 @@ button {
 .drumpad {
   height: 100%;
   width: 100%;
+  position: relative;
+}
+
+.key {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  text-transform: uppercase;
 }
 </style>
