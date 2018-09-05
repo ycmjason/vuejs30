@@ -6,7 +6,7 @@ Given boilerplate under `start/` directory. You can run `npm run serve` to start
 
 After running `npm run serve`, visit the localhost link on the terminal; you should see a grid of squares, each with a label of a sound.
 
-Your task is to make these squares clickable. When they are clicked, they should produce the corresponding sound.
+Your task is to make these squares clickable. When they are clicked, they should produce the corresponding sound. See [this](https://vuejs.org/v2/guide/events.html) for a guide to handle events.
 
 Inspect `src/App.vue` and `src/components/DrumPad.vue` carefully. Notice that inside `src/components/DrumPad.vue`, an `<audio>` tag is added which links to the correct sound already for you.
 
