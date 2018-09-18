@@ -12,23 +12,20 @@
 export default {
   name: 'Clock',
   created() {
-    setInterval(() => {
-      this.time = this.getCurrentTime();
-    }, 1000);
+    this.updateTime();
+    setInterval(this.updateTime, 1000);
   },
-  data () {
-    return {
-      time: this.getCurrentTime(),
-    };
-  },
+  data: () => ({
+    hours: 0,
+    mins: 0,
+    seconds: 0,
+  }),
   methods: {
-    getCurrentTime () {
+    updateTime () {
       const date = new Date();
-      return {
-        hours: date.getHours(),
-        mins: date.getMinutes(),
-        seconds: date.getSeconds(),
-      };
+      this.hours = date.getHours();
+      this.mins = date.getMinutes();
+      this.seconds = date.getSeconds();
     },
     getRotatedStyle: (degree) => ({
       transform: `rotate(${degree}deg)`,
@@ -36,13 +33,13 @@ export default {
   },
   computed: {
     hourHandDeg () {
-      return (((this.time.hours % 12) / 12) * 360) % 360;
+      return (((this.hours % 12) / 12) * 360) % 360;
     },
     minHandDeg () {
-      return ((this.time.mins / 60) * 360) % 360;
+      return ((this.mins / 60) * 360) % 360;
     },
     secondHandDeg () {
-      return ((this.time.seconds / 60) * 360) % 360;
+      return ((this.seconds / 60) * 360) % 360;
     },
   },
 };
