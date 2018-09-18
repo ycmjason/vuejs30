@@ -39,11 +39,11 @@ export default {
 }
 
 .hand {
-  width:50%;
-  height:6px;
+  width: 6px;
+  height: 50%;
   background:black;
   position: absolute;
-  top:50%;
-  transform-origin: right;
+  left: 50%;
+  transform-origin: bottom;
 }
 </style>
