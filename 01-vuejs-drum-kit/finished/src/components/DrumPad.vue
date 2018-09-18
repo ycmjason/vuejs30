@@ -11,6 +11,9 @@ export default {
   mounted() {
     window.addEventListener('keydown', this.onkeydown);
   },
+  beforeDestroy() {
+    window.removeEventListener('keydown', this.onkeydown);
+  },
   props: {
     sound: {
       required: true,
