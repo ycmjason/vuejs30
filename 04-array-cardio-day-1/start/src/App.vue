@@ -8,6 +8,14 @@
     <Q5 :inventors="inventors" />
     <Q6 :people="people" />
     <Q7 :vihicles="vihicles" />
+    <aside>
+      <h2>Inventors</h2>
+      <MagicTable :data="inventors" />
+      <h2>People</h2>
+      <MagicTable :data="people" />
+      <h2>Vihicles</h2>
+      <MagicTable :data="vihicles" />
+    </aside>
   </div>
 </template>
 
@@ -51,5 +59,17 @@ td, th {
 
 tr:nth-child(odd) {
   background: #efefef;
+}
+
+aside {
+  z-index: 1;
+  background: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  overflow: auto;
+  max-height: 100vh;
+  box-shadow: 0px 0 5px #888888;
+  padding: 1rem;
 }
 </style>
